@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import NewTicketForm from "./NewTicketForm";
 import TicketControl from "./TicketControl";
 
 const App = () => {

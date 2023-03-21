@@ -1,29 +1,30 @@
 import React from "react";
 import Ticket from "./Ticket";
+import PropTypes from "prop-types";
 
-const mainTicketList = [
-  {
-    location: "3A",
-    names: "Thato and Haley",
-    issue: "Firebase will not save record!" 
-  },
-  {
-    location: "4B",
-    names: "Sleater and Kinney",
-    issue: "Prop types are throwing an error." 
-  },
-  {
-    location:  "9F",
-    names:  "Imani and Jacob",
-    issue:  "Child component isn't rendering."
-  }
-]
+// const mainTicketList = [
+//   {
+//     location: "3A",
+//     names: "Thato and Haley",
+//     issue: "Firebase will not save record!" 
+//   },
+//   {
+//     location: "4B",
+//     names: "Sleater and Kinney",
+//     issue: "Prop types are throwing an error." 
+//   },
+//   {
+//     location:  "9F",
+//     names:  "Imani and Jacob",
+//     issue:  "Child component isn't rendering."
+//   }
+// ]
 
-const TicketList = () => {
+const TicketList = (props) => {
   return(
     <React.Fragment>
       <hr />
-      {mainTicketList.map((ticket, index) =>
+      {props.ticketList.map((ticket, index) =>
         <Ticket 
           names={ticket.names}
           location={ticket.location}
@@ -33,5 +34,9 @@ const TicketList = () => {
     </React.Fragment>
   );
 }
+
+TicketList.PropTypes = {
+  ticketList: PropTypes.array
+};
 
 export default TicketList;
